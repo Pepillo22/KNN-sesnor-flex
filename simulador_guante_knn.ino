@@ -36,9 +36,9 @@ const uint8_t NUM_FLEX = 5;
 const uint8_t FLEX_PINS[NUM_FLEX] = {36, 39, 34, 35, 32};
 const char*   NOMBRE_DEDO[NUM_FLEX] = {"pulgar", "indice", "medio", "anular", "menique"};
 
-const uint8_t NUM_CLASES = 5;
+const uint8_t NUM_CLASES = 7;
 const char* NOMBRE_GESTO[NUM_CLASES] = {
-  "Gesto_C", "Punio_Cerrado", "Mano_Abierta", "Gesto_L", "Gesto_OK"
+  "Gesto_C", "Punio_Cerrado", "Mano_Abierta", "Gesto_L", "Gesto_OK", "Ajustar_Lentes", "Cuernos_Rock"
 };
 
 const float NORM_ABIERTO = 0.08;   // valor de dedo extendido en el dataset
@@ -50,7 +50,7 @@ const float   ALFA_FILTRO = 0.35;
 // ------------------------------------------------------------
 //  Dataset base (tus CSV), valores x100
 // ------------------------------------------------------------
-const uint16_t BASE_N = 250;
+const uint16_t BASE_N = 350;
 const uint8_t BASE_X[BASE_N][NUM_FLEX] = {
   { 49, 56, 88, 90, 84},
   { 51, 53, 87, 87, 85},
@@ -301,8 +301,108 @@ const uint8_t BASE_X[BASE_N][NUM_FLEX] = {
   { 70, 68, 12, 10,  9},
   { 70, 69,  9, 10,  8},
   { 70, 68, 11,  7,  7},
-  { 70, 71,  9, 10,  8}
-};
+  { 70, 71,  9, 10,  8},
+{89, 88, 10, 91, 88},
+  {87, 88,  7, 86, 87},
+  {88, 86,  8, 89, 86},
+  {86, 89,  8, 89, 85},
+  {86, 87,  8, 91, 89},
+  {89, 87,  9, 89, 89},
+  {88, 90,  9, 88, 89},
+  {88, 88,  7, 89, 89},
+  {87, 89,  9, 90, 87},
+  {88, 86,  8, 88, 87},
+  {85, 88,  9, 92, 88},
+  {87, 90,  7, 90, 91},
+  {86, 89,  8, 91, 87},
+  {88, 88, 10, 87, 86},
+  {88, 87, 11, 90, 86},
+  {89, 89, 11, 89, 87},
+  {88, 90,  9, 92, 89},
+  {88, 87,  7, 88, 89},
+  {88, 86,  9, 90, 90},
+  {92, 89, 10, 90, 89},
+  {91, 85, 10, 87, 87},
+  {88, 88,  8, 92, 89},
+  {89, 89,  8, 88, 87},
+  {90, 86,  8, 91, 87},
+  {88, 86, 11, 87, 87},
+  {89, 88,  8, 89, 87},
+  {88, 89,  9, 88, 88},
+  {88, 89, 10, 88, 87},
+  {89, 88,  9, 91, 89},
+  {88, 88, 10, 88, 91},
+  {88, 87,  9, 88, 89},
+  {88, 88,  8, 88, 88},
+  {89, 88,  9, 87, 88},
+  {89, 89,  9, 89, 88},
+  {91, 87, 10, 89, 91},
+  {88, 89, 11, 90, 87},
+  {85, 90,  9, 91, 86},
+  {88, 88, 10, 90, 86},
+  {90, 88, 11, 92, 88},
+  {85, 86,  7, 89, 89},
+  {89, 88,  7, 89, 86},
+  {89, 87, 10, 88, 87},
+  {87, 88,  9, 89, 89},
+  {90, 90,  9, 90, 88},
+  {87, 86,  8, 87, 91},
+  {89, 86,  9, 88, 86},
+  {87, 87,  9, 88, 88},
+  {87, 88, 10, 86, 89},
+  {88, 87, 10, 87, 88},
+  {87, 89,  8, 90, 90}
+,
+{ 82, 10, 89, 92, 10 },
+{ 90, 11, 92, 89,  9 },
+{ 90,  9, 89, 89, 10 },
+{ 89,  8, 92, 91,  6 },
+{ 90,  9, 92, 90,  9 },
+{ 89,  8, 88, 91, 12 },
+{ 89,  8, 88, 88,  9 },
+{ 90, 12, 86, 93, 11 },
+{ 88, 10, 88, 87, 10 },
+{ 84,  6, 87, 91,  8 },
+{ 90,  8, 94, 91,  9 },
+{ 91,  6, 90, 88,  9 },
+{ 88, 10, 89, 88,  7 },
+{ 88,  7, 94, 90,  7 },
+{ 88,  9, 90, 92,  7 },
+{ 88,  8, 90, 94, 11 },
+{ 88,  8, 86, 93, 10 },
+{ 91,  7, 93, 88,  6 },
+{ 91, 10, 91, 89, 11 },
+{ 90,  7, 90, 94,  8 },
+{ 87,  7, 89, 94,  8 },
+{ 87,  8, 87, 91, 10 },
+{ 92,  9, 88, 91,  7 },
+{ 88,  9, 89, 87, 10 },
+{ 86,  8, 85, 90,  8 },
+{ 84, 10, 91, 93,  8 },
+{ 91, 10, 91, 89, 10 },
+{ 82,  7, 91, 95,  9 },
+{ 84, 12, 94, 95,  8 },
+{ 87,  9, 91, 94,  9 },
+{ 90,  8, 90, 84, 11 },
+{ 87,  9, 90, 90,  8 },
+{ 88,  8, 89, 92,  7 },
+{ 85, 11, 92, 87, 10 },
+{ 87, 11, 90, 90,  7 },
+{ 84,  7, 88, 89,  8 },
+{ 90,  9, 92, 91,  9 },
+{ 89,  9, 92, 90,  8 },
+{ 89,  8, 91, 89, 10 },
+{ 92,  7, 88, 88, 10 },
+{ 87,  8, 89, 88,  9 },
+{ 86,  9, 91, 92,  8 },
+{ 88,  8, 90, 88, 10 },
+{ 87, 10, 90, 92,  9 },
+{ 83,  7, 95, 90,  8 },
+{ 88,  9, 90, 94, 10 },
+{ 86,  8, 90, 91, 10 },
+{ 90, 10, 90, 92, 10 },
+{ 86, 10, 89, 92, 11 },
+{ 86, 10, 91, 91,  8 }};
 const uint8_t BASE_Y[BASE_N] = {
   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -313,7 +413,11 @@ const uint8_t BASE_Y[BASE_N] = {
   3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
   3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
   4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
-  4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+  4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+  5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+  5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+  6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+  6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
 };
 
 // ------------------------------------------------------------
@@ -522,7 +626,7 @@ void cmdClasificar() {
 
 void cmdGesto(int c) {
   if (c < 0 || c >= NUM_CLASES) {
-    Serial.println(F("Uso: gesto <0-4>"));
+    Serial.println(F("Uso: gesto <0-6>"));
     return;
   }
   for (uint8_t i = 0; i < NUM_FLEX; i++) manoVirtual[i] = centroide[c][i];
@@ -533,7 +637,7 @@ void cmdGesto(int c) {
 
 void cmdAnimar(int destino) {
   if (destino < 0 || destino >= NUM_CLASES) {
-    Serial.println(F("Uso: animar <0-4>"));
+    Serial.println(F("Uso: animar <0-6>"));
     return;
   }
   fuente = VIRTUAL;
@@ -586,7 +690,7 @@ void cmdPrueba(int porClase) {
   Serial.printf("\n=== PRUEBA AUTOMATICA: %d muestras por gesto, ruido %.3f, K=%u ===\n",
                 porClase, ruido, K);
   Serial.println(F("Filas = gesto real | Columnas = lo que predijo el KNN"));
-  const char* cols[NUM_CLASES + 1] = {"C", "Pun", "Abi", "L", "OK", "Desc"};
+  const char* cols[NUM_CLASES + 1] = {"C", "Pun", "Abi", "L", "OK", "Len", "Rck", "Desc"};
   Serial.printf("%15s", "");
   for (uint8_t p = 0; p <= NUM_CLASES; p++) Serial.printf("%5s ", cols[p]);
   Serial.println();
@@ -601,7 +705,7 @@ void cmdPrueba(int porClase) {
 
 void cmdGrabar(int clase, int cantidad) {
   if (clase < 0 || clase >= NUM_CLASES) {
-    Serial.println(F("Uso: grabar <clase 0-4> [cantidad]"));
+    Serial.println(F("Uso: grabar <clase 0-6> [cantidad]"));
     return;
   }
   if (cantidad <= 0) cantidad = 20;
@@ -696,7 +800,7 @@ void pasoEnVivo() {
 void mostrarAyuda() {
   Serial.println(F("\n================= SIMULADOR KNN - COMANDOS ================="));
   Serial.println(F(" MANO VIRTUAL"));
-  Serial.println(F("  gesto <0-4>           Poner la mano en un gesto del dataset"));
+  Serial.println(F("  gesto <0-6>           Poner la mano en un gesto del dataset"));
   Serial.println(F("  dedo <0-4> <0-1>      Mover un dedo. Ej: dedo 1 0.9"));
   Serial.println(F("  mano a b c d e        Fijar los 5 dedos. Ej: mano 0.1 0.1 0.9 0.9 0.9"));
   Serial.println(F("  azar                  Posicion aleatoria"));
@@ -705,7 +809,7 @@ void mostrarAyuda() {
   Serial.println(F(" KNN"));
   Serial.println(F("  clasificar            Clasificar y explicar paso a paso"));
   Serial.println(F("  vivo / parar          Prediccion continua en tiempo real"));
-  Serial.println(F("  animar <0-4>          Transicion animada hacia un gesto"));
+  Serial.println(F("  animar <0-6>          Transicion animada hacia un gesto"));
   Serial.println(F("  prueba [n]            Evaluar precision con n muestras por gesto"));
   Serial.println(F("  k <n>                 Cambiar K. Ej: k 7"));
   Serial.println(F("  umbral <valor>        Distancia maxima para aceptar un gesto"));

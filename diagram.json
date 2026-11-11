@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "author": "Guante KNN",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_pulgar",
+      "top": -150,
+      "left": -330,
+      "attrs": {
+        "travelLength": "30"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_indice",
+      "top": -75,
+      "left": -330,
+      "attrs": {
+        "travelLength": "30"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_medio",
+      "top": 0,
+      "left": -330,
+      "attrs": {
+        "travelLength": "30"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_anular",
+      "top": 75,
+      "left": -330,
+      "attrs": {
+        "travelLength": "30"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_menique",
+      "top": 150,
+      "left": -330,
+      "attrs": {
+        "travelLength": "30"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "pot_pulgar:SIG",
+      "esp:VP",
+      "green",
+      []
+    ],
+    [
+      "pot_pulgar:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_pulgar:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_indice:SIG",
+      "esp:VN",
+      "green",
+      []
+    ],
+    [
+      "pot_indice:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_indice:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_medio:SIG",
+      "esp:34",
+      "green",
+      []
+    ],
+    [
+      "pot_medio:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_medio:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_anular:SIG",
+      "esp:35",
+      "green",
+      []
+    ],
+    [
+      "pot_anular:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_anular:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_menique:SIG",
+      "esp:32",
+      "green",
+      []
+    ],
+    [
+      "pot_menique:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_menique:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
